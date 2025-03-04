@@ -1,0 +1,48 @@
+<% layout("/layouts/boilerplate") %>
+
+<body>
+    <br>
+    <div class="row">
+        <div class="col-8 offset-2">
+    <h3>Edit Your listing </h3>
+    <br>
+    <form method="post" action="/cars/<%= cardata.id %>?_method=PUT" novalidate class="needs-validation"> 
+        <div class="mb-3">
+            <label for="Title" class="form-labael" >Title</label>
+            <input value="<%= cardata.title %>" class="form-control" name="cardata[title]" type="text" required> 
+            <div class="valid-feedback">Title looks good</div>
+        </div>
+        <div class="mb-3">
+            <label for="description" class="form-labael" >Description</label>
+        <textarea name="cardata[description]" class="form-control" type="text" required ><%= cardata.description %> 
+
+        </textarea>
+        <div class="invalid-feedback">
+            pleae enter a short  description
+        </div>   
+
+        </div>
+        <div class="mb-3">
+            <label for="image" class="form-labael" >Image</label>
+        <input value="<%= cardata.image %>" class="form-control" name="cardata[image]" type="text" >
+        </div>
+        <div class="row">
+        <div class="mb-3 col-4">
+            <label for="price" class="form-labael" >Price</label>
+        <input value="<%= cardata.price %>" class="form-control" name="cardata[price]" type="number" required>
+        <div class="invalid-feedback">
+            pleae enter valid amount
+        </div>
+        </div>
+       
+    </div>
+      
+        <br>
+        <button class="btn btn-dark sub-btn">Submit</button>
+        <br>
+        <br>
+    </form>
+</div>
+</div>
+
+</body>
