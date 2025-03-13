@@ -13,13 +13,9 @@ body{
 .navbar
 {
     height: 5rem;
-    background-color: white ;
 }
-.fa-compass
-{
-    color: #fe424d;
-    font-size: 2rem;
-}
+
+
 .nav-link
 {
     color: #222222 !important;
@@ -69,6 +65,8 @@ body{
 /* Cards */
 .listing-card
 {
+    background-color: #F3E8FF !important;
+
     border: none !important;
     margin-bottom: 2rem;
      
@@ -112,8 +110,9 @@ body{
 
 .show-card
 {
-    height: 30vh !important;
-   
+    background-color: #F3E8FF;
+    width: 43vh !important;
+    height: 40vh !important;
 }
 .btns
 {
@@ -123,8 +122,4 @@ body{
 {
     padding-left: 0;
     padding-right: 0;
-}
-.navbar-brand
-{
-    background-color: red;
 }

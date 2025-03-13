@@ -1,36 +1,60 @@
+<style>
+ .navbar {
+    background-color: #2D033B !important;
+    color: #EDEDED !important;
+}
+.navbar a {
+    color: #EDEDED !important;
+}
+.navbar a:hover {
+    color: #D980FA !important;
+}
+
+
+</style>
+
+
+
+
+
+
+
 <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
     <div class="container-fluid">
-      <a class="navbar-brand" href="/"><i class="fa-solid fa-tractor"></i></a>
-      <a class="navbar-brand" href="/"><i class="fa-regular fa-compass"> <i class="fa-solid fa-tractor"></i></i></a>
+      <a class="navbar-brand" href="/"></a>
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="border: 2px solid white;">
+        <span class="navbar-toggler-icon" style="background-color: white; border: 2px solid white;"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="/cars">Home</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/cars">Allcars</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/cars/new">Add New Car</a>
-          </li>
-        
         </ul>
 
+        <div class="navbar-nav ms-auto">
+          <form class="d-flex " role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
 
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
+          <li class="nav-item ">
+            <a class="nav-link" href="/cars/new">Add New Car</a>
+          </li>
+          <% if(!currenuser) { %>
             <a class="nav-link active" aria-current="page" href="/signup">Signup</a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link" href="/login">Login</a>
-          </li>
-          <li class="nav-item">
+
+            <% } %>
+        
+          
+          <% if(currenuser) { %>
             <a class="nav-link" href="/logout">Logout</a>
-          </li>  
+            <% } %>
+          
         </ul>
         
       </div>

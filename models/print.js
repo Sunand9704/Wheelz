@@ -12,9 +12,8 @@ const carsSchema = new Schema({
     },
     image:
     {
-        type:String,
-        default : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzDhN6PT71Exuhr6j6KayhENg5ofz4iXGR1A&s",
-        set : (v) => v ==="" ? "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzDhN6PT71Exuhr6j6KayhENg5ofz4iXGR1A&s":v,
+        url:String,
+        path:String,
     },
     price:
     {
@@ -31,6 +30,7 @@ const carsSchema = new Schema({
         type:Schema.Types.ObjectId,
         ref:"User",
     },
+    
 });
 
 carsSchema.post("findOneAndDelete", async(listning) =>

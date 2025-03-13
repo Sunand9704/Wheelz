@@ -1,9 +1,10 @@
 const mongoose = require("mongoose");
-const schema = mongoose.Schema;
+const Schema = mongoose.Schema;
 const Vechile = require("./print.js");
 const carsSchema = require("../schema.js");
+const { ref } = require("joi");
 
-const reviewSchema= new schema({
+const reviewSchema= new Schema({
     comment:
     {
         type:String,
@@ -14,8 +15,13 @@ const reviewSchema= new schema({
     },
     createdAt:
     {
-      type:String,
+      type:Date,
       default:Date.now(),  
+    },
+    author:
+    {
+        type:Schema.Types.ObjectId,
+        ref:"User",
     },
 });
 
